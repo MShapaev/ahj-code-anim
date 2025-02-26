@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 60%;
+    background-color: #c8cfcf;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.entries {
+    display: flex;
+    flex-direction: column;
+    animation-delay: 2s;
+
+}
+
+.entry {
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition-timing-function: ease-out;
+    overflow: hidden;
+    transition-property: all;
+}
+
+
+.collapse {
+    color: #6e7476;
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    background-color: #b3bcbc;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.collapse:hover {
+    cursor: pointer;
+    color: black;
+    box-shadow: 0 0 5px 2px grey;
+    animation-name: collapse;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes collapse {
+    0% {
+        box-shadow: 0 0 0 grey;
+    }
+    100% {
+        box-shadow: 0 0 10px 5px grey;
+    }
+}
+
+.entry.active {
+    display: block;
+    animation-name: cein;
+    animation-duration: 1s;
+    transition-property: all;
+    animation-fill-mode: forwards;
+}
+
+.entry:not(.active) {
+    display: block;
+    animation-name: cein-reverse;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cein {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: 200px;
+    }
+}
+
+@keyframes cein-reverse {
+    0% {
+        max-height: 200px;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        max-height: 0;
+        display: none;
+        padding: 0;
+    }
+}
+
